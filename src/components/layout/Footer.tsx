@@ -1,23 +1,28 @@
 import { siteConfig } from "@/config/site";
+import { Container } from "@/components/ui/Container";
 
 export function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="w-full border-t border-neutral-800 bg-neutral-950 py-8 text-neutral-400">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row md:text-left lg:px-8">
-        <div>
-          <p className="text-sm font-medium text-neutral-300">
-            {siteConfig.name}
-          </p>
-          <p className="text-xs text-neutral-500">
-            {siteConfig.tagline} • {siteConfig.institution}
-          </p>
+    <footer className="w-full border-t border-border bg-bg-primary py-10 text-text-secondary">
+      <Container size="default">
+        <div className="flex flex-col items-center justify-between gap-6 text-center sm:text-left md:flex-row">
+          <div className="border-l-0 sm:border-l-2 sm:border-accent-red sm:pl-3">
+            <p className="text-sm font-bold uppercase tracking-tight text-text-primary">
+              {siteConfig.name}
+            </p>
+            <p className="mt-0.5 text-xs text-steel font-mono">
+              {siteConfig.tagline} • {siteConfig.institution}
+            </p>
+          </div>
+
+          <div className="text-xs text-steel font-mono text-center md:text-right">
+            <p>© {currentYear} {siteConfig.shortName}. Production Engineering Platform.</p>
+            <p className="mt-0.5 text-[11px] text-steel/80">Automotive & Motorcycle Innovation Club • VIT Pune</p>
+          </div>
         </div>
-        <p className="text-xs text-neutral-500">
-          © {currentYear} {siteConfig.shortName}. All rights reserved. Built for production on Vercel.
-        </p>
-      </div>
+      </Container>
     </footer>
   );
 }
