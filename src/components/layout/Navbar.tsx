@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -12,8 +13,15 @@ export function Navbar() {
             href="/"
             className="flex items-center gap-2.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary rounded-[2px]"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-[2px] bg-accent-red font-black text-text-primary tracking-wider text-sm shadow-sm group-hover:bg-accent-red-hover transition-colors motion-reduce:transition-none">
-              RC
+            <div className="relative flex h-9 w-9 items-center justify-center rounded-[2px] bg-surface-secondary border border-border p-1 group-hover:border-steel transition-colors motion-reduce:transition-none">
+              <Image
+                src="/images/branding/revcrew-logo-transparent.png"
+                alt="RevCrew official logo"
+                width={36}
+                height={36}
+                className="h-full w-full object-contain"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-black tracking-tight text-text-primary text-base uppercase leading-none">
@@ -45,7 +53,7 @@ export function Navbar() {
           <div className="flex items-center gap-3">
             <div className="hidden sm:inline-flex items-center gap-2 rounded-[2px] border border-border bg-surface-secondary px-2.5 py-1 text-xs font-mono text-steel">
               <span className="h-1.5 w-1.5 rounded-[1px] bg-accent-red" />
-              <span>SPEC 02 // DESIGN</span>
+              <span>PHASE 03 // ASSETS ACTIVE</span>
             </div>
 
             {/* Accessible Native Mobile Menu */}
